@@ -202,6 +202,9 @@ Incremental = function(name, options) {
 
 		}
 
+		// Reset the ready counter
+		self._readyCounter = 0;
+
 		// Set the new arguments
 		self._args = Array.prototype.slice.call(arguments);
 
