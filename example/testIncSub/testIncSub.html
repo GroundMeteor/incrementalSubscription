@@ -1,0 +1,43 @@
+<head>
+  <title>testIncSub</title>
+</head>
+
+<body>
+  {{> hello}}
+</body>
+
+<template name="hello">
+  <h1>Hello World!</h1>
+  Incremental Subscriptions<br/>
+  <small>Number of documents in memory: {{subsetCount}} current: {{currentsubset}} offset: {{currentoffset}}</small><br/>
+  {{#with config}}
+  <small>Config: Read ahead: +/-{{ahead}}, per subset: {{perSubset}}  maxSubsets: {{maxSubsets}}</small><br/>
+  {{/with}}
+  <br/>
+  Page: 
+  <input type="button" class="prev" value="prev" />
+  <input type="button" class="next" value="next" />
+  <br/>
+  Enter a page:
+  <input id="preserveMe" type="number" class="nr" value="0" />
+  <input type="button" class="goto" value="goto" />
+
+<br/>
+  -------------------------
+
+  <br/>
+  {{#each subset}}
+  {{name}}<br/>
+  {{else}}
+  No subsets found
+  {{/each}}
+<br/>
+  -------------------------
+</br>
+	All the data in memory:<br/>
+  {{#each alldata}}
+  {{name}}<br/>
+  {{else}}
+  No subsets found
+  {{/each}}
+</template>
