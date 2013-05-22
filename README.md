@@ -6,6 +6,8 @@
 
 Bug: when going out of data bounds (in the example its above 100 documents) the offset algoritme fails for now
 
+TODO: testSubsets.setCurrent(i) should have an extra param for forcing it allways - eg. if we want the first and last subset on client.
+
 [Live example](http://incrementalsubscriptions.meteor.com/)
 
 ```js
@@ -22,6 +24,8 @@ testSubsets.subscribe('this is just a param');
 Template.hello.subset = function () {
     return data.find({}, testSubsets.query());
 };
+
+testSubsets.setCurrent(i)
 
 ```
 
