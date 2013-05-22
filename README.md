@@ -6,6 +6,8 @@
 
 Bug: when going out of data bounds (in the example its above 100 documents) the offset algoritme fails for now
 
+[Live example](http://incrementalsubscriptions.meteor.com/)
+
 ```js
 var testSubsets = new Incremental('test', {
   current: 0,
