@@ -60,7 +60,10 @@ if (Meteor.isClient) {
 if (Meteor.isServer) {
 
   Meteor.publish('test', function(index, text) {
-    return cursor = data.find({}, pointer.query(index));
+    var skip = (index - 1) * pointer.perSubset;
+    var cursor = data.find({});//.limit(1);//.skip(skip).limit(pointer.perSubset);
+    return cursor;
+    //return cursor = data.find({}, pointer.query(index));
     //return cursor.skip((index-1)*nPerPage).limit(nPerPage); // Not supported yet?
   });
 
